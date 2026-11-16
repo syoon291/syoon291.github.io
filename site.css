@@ -161,3 +161,4 @@ thead th { position: sticky; top: 0; background: var(--surface-2); font-size: 12
 tr.hit td { background: var(--accent-soft); font-weight: 700; }
 tr.hit td:first-child::after { content: " ★"; color: var(--accent); }
 .linkish { border: 0; background: none; color: var(--accent); font: 600 14px var(--sans); cursor: pointer; padding: 0; text-decoration: underline; text-underline-offset: 3px; }
+.skills p + p { margin-top: 4px; }
