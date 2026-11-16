@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freedom Calculator · Steven Yoon</title>
+  <meta name="description" content="How much do you need to be financially independent, and how long will it take? A step-by-step calculator that runs in your browser.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../../site.css">
+  <script src="../../site.js" defer></script>
+  <script src="freedom.js" defer></script>
+</head>
+<body class="calc">
+  <header class="nav">
+    <div class="wrap">
+      <a class="name" href="../../"><i aria-hidden="true"></i>Steven Yoon</a>
+      <nav class="links" aria-label="Site"><a href="../../#work">Work</a><a href="../../#tools">Tools</a></nav>
+      <button class="theme-btn" type="button" aria-label="Switch light or dark theme" data-theme-toggle>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" style="padding-bottom:24px">
+      <p class="eyebrow">Tool</p>
+      <h1 class="display" style="font-size:clamp(40px,8vw,64px)">The <em>freedom</em> calculator</h1>
+      <p class="lede">How much would it take to never <i>have</i> to work again, and what would it take to get there? Five steps. Every number updates as you type.</p>
+    </section>
+
+    <section>
+      <p class="step">01</p>
+      <h2>Where you are</h2>
+      <div class="fields">
+        <div class="field"><label for="start">Invested today</label><div class="input"><span>$</span><input id="start" inputmode="decimal" value="25,000"></div></div>
+        <div class="field"><label for="ret">Expected yearly return</label><div class="input"><input id="ret" inputmode="decimal" value="10"><span>%</span></div></div>
+        <div class="field"><label for="infl">Inflation</label><div class="input"><input id="infl" inputmode="decimal" value="3"><span>%</span></div></div>
+      </div>
+      <label class="check"><input type="checkbox" id="real" checked> Show everything in today's dollars (return minus inflation)</label>
+      <div class="note"><b>Rule of thumb:</b> broad US stock indexes have historically returned roughly 10% a year before inflation, about 7% after. The past doesn't promise the future, so a lower number is the cautious choice.</div>
+    </section>
+
+    <section>
+      <p class="step">02</p>
+      <h2>Your freedom number</h2>
+      <div class="fields">
+        <div class="field">
+          <label for="spend">What you'd spend <span class="seg" role="group" aria-label="Spending period" style="margin-left:6px;vertical-align:middle"><button type="button" data-period="month" aria-pressed="true">/ month</button><button type="button" data-period="year" aria-pressed="false">/ year</button></span></label>
+          <div class="input"><span>$</span><input id="spend" inputmode="decimal" value="4,000"></div>
+        </div>
+        <div class="field"><label for="wr">Safe withdrawal rate</label><div class="input"><input id="wr" inputmode="decimal" value="4"><span>% / year</span></div></div>
+      </div>
+      <div class="result"><span class="muted small">You're free when your investments reach</span><div class="big" id="o-freedom">$0</div><span class="muted small" id="o-freedom-why"></span></div>
+    </section>
+
+    <section>
+      <p class="step">03</p>
+      <h2>Free by…</h2>
+      <div class="fields">
+        <div class="field"><label for="age">Your age</label><div class="input"><input id="age" inputmode="numeric" value="25"><span>years old</span></div></div>
+        <div class="field"><label for="target">Free by age</label><div class="input"><input id="target" inputmode="numeric" value="50"><span>years old</span></div></div>
+      </div>
+      <div class="result grid">
+        <div><b id="o-years">0</b><span>years to go</span></div>
+        <div><b id="o-need-m">$0</b><span>to invest each month</span></div>
+        <div><b id="o-need-y">$0</b><span>per year</span></div>
+      </div>
+    </section>
+
+    <section>
+      <p class="step">04</p>
+      <h2>Where will I be?</h2>
+      <p class="muted" style="margin:0">Starts from the plan above. Change it to see what a different pace does. <button class="linkish" type="button" id="reset-plan">Use the required plan</button></p>
+      <div class="fields">
+        <div class="field"><label for="contrib">I'll invest each month</label><div class="input"><span>$</span><input id="contrib" inputmode="decimal" value="0"></div></div>
+        <div class="field"><label for="years">For</label><div class="input"><input id="years" inputmode="numeric" value="25"><span>years</span></div></div>
+      </div>
+      <div class="result">
+        <span class="muted small">You'd have about</span>
+        <div class="big" id="o-balance">$0</div>
+        <div class="split" aria-hidden="true"><i id="bar-c" style="background:var(--chart-2)"></i><i id="bar-g" style="background:var(--accent)"></i></div>
+        <div class="legend"><span><i style="background:var(--chart-2)"></i>You put in <b id="o-contributed">$0</b></span><span><i style="background:var(--accent)"></i>Growth <b id="o-growth">$0</b></span></div>
+        <p class="small" id="o-when" style="margin:14px 0 0"></p>
+      </div>
+    </section>
+
+    <section>
+      <p class="step">05</p>
+      <h2>Year by year</h2>
+      <p class="muted" style="margin:0">Using step 04's pace. The starred row is the year you cross your freedom number.</p>
+      <svg class="chart" id="chart" viewBox="0 0 640 240" role="img" aria-label="Balance growth chart"></svg>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Year</th><th>Age</th><th>Put in</th><th>Growth</th><th>Balance</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table></div>
+    </section>
+
+    <p class="small muted" style="padding:24px 0 8px">For education only, not financial advice. Returns aren't guaranteed, and taxes and fees are left out. Nothing you type leaves your browser.</p>
+  </main>
+
+  <footer><div class="wrap"><span>© <span data-year>2026</span> Steven Yoon</span><a href="../../">← Back to the site</a></div></footer>
+</body>
+</html>
