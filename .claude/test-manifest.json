@@ -1,0 +1,10 @@
+{
+  "updated": "2026-11-17",
+  "stacks": [],
+  "ports": { "default": 8702 },
+  "devServer": { "command": "python3 -m http.server {port}", "port": "{port}", "baseUrl": "http://localhost:{port}" },
+  "run": { "web": { "command": "python3 -m http.server {port}", "port": "{port}", "url": "http://localhost:{port}" } },
+  "routes": { "key": ["/", "/tools/freedom/", "/workout/"], "skip": ["/workout/legacy/"] },
+  "release": { "merge": "merge", "notes": "Merging to main publishes the site through GitHub Pages; there is no build or deploy step of our own." },
+  "notes": "Plain HTML/CSS/JS, no build, no tests, no auth. /nihongo/ is a separate repo (syoon291/nihongo) served under this domain, not in this repo. /workout/legacy/ is the 2023 team project kept as-is."
+}
