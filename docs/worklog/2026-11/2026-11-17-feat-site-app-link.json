@@ -1,0 +1,1 @@
+{"date":"2026-11-17","branch":"feat/site-app-link","pr":10,"summary":"Added a Nihongo app pill to every page nav and a Try Nihongo Ears button in the home hero, kept visible on phones. Tracked .claude/test-manifest.json and pointed the README nihongo row at the live app."}
