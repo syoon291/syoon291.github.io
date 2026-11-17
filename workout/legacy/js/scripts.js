@@ -52,3 +52,12 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+// The contact form was never wired to a backend (its SB Forms script and
+// API token were placeholders and are gone), so keep it from reloading the page.
+window.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', event => event.preventDefault());
+    }
+});

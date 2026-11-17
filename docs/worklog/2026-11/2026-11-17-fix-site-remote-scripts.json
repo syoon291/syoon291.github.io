@@ -1,0 +1,1 @@
+{"date":"2026-11-17","branch":"fix/site-remote-scripts","pr":11,"summary":"Served the legacy workout page's Bootstrap and Font Awesome from vendored copies and dropped the dead SB Forms script, so no page on the origin genki shares runs third-party code. Added the repo's first CI, a Checks workflow that fails any PR loading a remote script."}
