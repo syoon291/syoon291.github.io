@@ -166,3 +166,14 @@ thead th { position: sticky; top: 0; background: var(--surface-2); font-size: 12
 tr.hit td { background: var(--accent-soft); font-weight: 700; }
 tr.hit td:first-child::after { content: " ★"; color: var(--accent); }
 .linkish { border: 0; background: none; color: var(--accent); font: 600 14px var(--sans); cursor: pointer; padding: 0; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- apps (projects section) ---------- */
+.apps { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 12px; }
+.app { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 16px; padding: 16px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); text-decoration: none; color: var(--ink); }
+.app:hover { color: var(--ink); border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }
+.app .icon { width: 44px; height: 44px; border-radius: 12px; background: var(--accent-soft); display: grid; place-items: center; font-size: 22px; }
+.app b { display: block; font-size: 17px; letter-spacing: -.01em; }
+.app .muted { display: block; font-size: 15px; line-height: 1.5; }
+.app .go { display: inline-block; color: var(--accent); font-weight: 700; transition: transform .15s; }
+.app:hover .go { transform: translateX(2px); }
+@media (max-width: 420px) { .app { grid-template-columns: 40px 1fr; gap: 12px; padding: 14px 16px; } .app .icon { width: 40px; height: 40px; } .app .go { display: none; } }
