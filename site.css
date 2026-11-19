@@ -168,12 +168,19 @@ tr.hit td:first-child::after { content: " ★"; color: var(--accent); }
 .linkish { border: 0; background: none; color: var(--accent); font: 600 14px var(--sans); cursor: pointer; padding: 0; text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- apps (projects section) ---------- */
-.apps { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 12px; }
-.app { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 16px; padding: 16px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); text-decoration: none; color: var(--ink); }
+.apps { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 16px; }
+@media (min-width: 760px) { .apps { grid-template-columns: 1fr 1fr; } }
+.app { display: grid; grid-template-columns: 1fr 132px; align-items: center; gap: 20px; height: 100%; box-sizing: border-box; padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); text-decoration: none; color: var(--ink); }
 .app:hover { color: var(--ink); border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }
-.app .icon { width: 44px; height: 44px; border-radius: 12px; background: var(--accent-soft); display: grid; place-items: center; font-size: 22px; }
-.app b { display: block; font-size: 17px; letter-spacing: -.01em; }
-.app .muted { display: block; font-size: 15px; line-height: 1.5; }
-.app .go { display: inline-block; color: var(--accent); font-weight: 700; transition: transform .15s; }
-.app:hover .go { transform: translateX(2px); }
-@media (max-width: 420px) { .app { grid-template-columns: 40px 1fr; gap: 12px; padding: 14px 16px; } .app .icon { width: 40px; height: 40px; } .app .go { display: none; } }
+.app .body { display: grid; gap: 10px; align-content: center; }
+.app .head { display: flex; align-items: center; gap: 12px; }
+.app .icon { flex: none; width: 40px; height: 40px; border-radius: 12px; background: var(--accent-soft); display: grid; place-items: center; font-size: 20px; }
+.app b { font-size: 18px; letter-spacing: -.01em; }
+.app .status { justify-self: start; display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 600; }
+.app .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.app .muted { font-size: 15px; line-height: 1.5; }
+.app .go { color: var(--accent); font-size: 15px; font-weight: 600; }
+.app .go span { display: inline-block; transition: transform .15s; }
+.app:hover .go span { transform: translateX(2px); }
+.app .shot { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); background: var(--line); }
+@media (max-width: 420px) { .app { grid-template-columns: 1fr 104px; gap: 14px; padding: 16px; } .app .icon { width: 36px; height: 36px; font-size: 18px; } }
