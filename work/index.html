@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work · Steven Yoon</title>
+  <meta name="description" content="Things Steven Yoon has built: Nihongo Ears, the Freedom Calculator, Liftlog, a graduation system and an HCI course website.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../site.css">
+  <script src="../site.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="name" href="/"><i aria-hidden="true"></i>Steven Yoon</a>
+      <a class="app-pill" href="https://syoon291.github.io/nihongo/" title="Nihongo Ears: my Japanese speaking and listening app"><span aria-hidden="true">🗣️</span>Nihongo app</a>
+      <button class="theme-btn" type="button" aria-label="Switch light or dark theme" data-theme-toggle>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="menu-btn" type="button" aria-haspopup="dialog" aria-controls="site-menu" aria-expanded="false" data-menu-open>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span>
+      </button>
+    </div>
+  </header>
+  <dialog class="menu" id="site-menu" aria-labelledby="site-menu-title">
+    <div class="menu-head">
+      <h2 id="site-menu-title">Menu</h2>
+      <button class="theme-btn" type="button" aria-label="Close menu" data-menu-close>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav aria-label="Site">
+      <ul>
+          <li><a href="/"><b>Apps</b><span>What I use every day</span></a></li>
+          <li><a href="/about/"><b>About</b><span>From swim deck to Tokyo</span></a></li>
+          <li><a href="/work/" aria-current="page"><b>Work</b><span>Things I've built</span></a></li>
+          <li><a href="/skills/"><b>Skills</b><span>What I work with</span></a></li>
+          <li><a href="/contact/"><b>Contact</b><span>Say hi</span></a></li>
+      </ul>
+    </nav>
+    <p class="menu-out"><a href="https://github.com/syoon291">GitHub</a><a href="https://www.linkedin.com/in/syoon291">LinkedIn</a></p>
+  </dialog>
+
+  <main id="top">
+    <section class="hero sub">
+      <div class="wrap">
+        <p class="eyebrow">Selected work</p>
+        <h1 class="display">Things <em>I've built</em></h1>
+        <div class="projects">
+
+          <article class="project featured">
+            <div class="top"><h3>Nihongo Ears</h3><span class="badge">Live</span><span class="year">2026</span></div>
+            <dl>
+              <dt>Problem</dt><dd>Living in Tokyo as a beginner, I needed to understand and answer everyday spoken Japanese, not read kanji. Most apps teach the opposite.</dd>
+              <dt>Built</dt><dd>An installable, offline phone app: audio-first flashcards in romaji, SM-2 spaced repetition, a shadowing mode that times your turn to speak, and a log for phrases used on real people.</dd>
+              <dt>Result</dt><dd>85 high-frequency spoken phrases and words to start, a daily routine I actually keep, and no account or server: progress stays on my phone.</dd>
+            </dl>
+            <div class="tags"><span class="tag">JavaScript</span><span class="tag">PWA</span><span class="tag">Web Speech API</span><span class="tag">Spaced repetition</span></div>
+            <div class="links-row"><a href="https://syoon291.github.io/nihongo/">Open the app →</a><a href="https://github.com/syoon291/nihongo">Code</a></div>
+          </article>
+
+          <article class="project">
+            <div class="top"><h3>Freedom Calculator</h3><span class="badge">Live</span><span class="year">2026</span></div>
+            <dl>
+              <dt>Problem</dt><dd>"How much do I need, and how long will it take?" is the core question of financial independence, and most calculators bury it.</dd>
+              <dt>Built</dt><dd>A one-page, step-by-step calculator: your freedom number, the monthly saving it takes to retire by a target age, and a year-by-year projection with a chart.</dd>
+              <dt>Result</dt><dd>Every number updates as you type, in today's dollars if you want, with no sign-up and nothing sent anywhere.</dd>
+            </dl>
+            <div class="tags"><span class="tag">JavaScript</span><span class="tag">SVG charts</span><span class="tag">Finance</span></div>
+            <div class="links-row"><a href="../tools/freedom/">Try it →</a></div>
+          </article>
+
+          <article class="project">
+            <!-- TODO: add a measurable outcome (grade, users, queries) if you have one -->
+            <div class="top"><h3>Graduation System</h3><span class="year">2022</span></div>
+            <dl>
+              <dt>Problem</dt><dd>Students, advisors and admins each need a different view of degree progress and graduation requirements.</dd>
+              <dt>Built</dt><dd>A role-based web app for the GW Database Systems final project, with a relational schema for courses, requirements and audits.</dd>
+              <dt>Result</dt><dd>One system that checks a student's record against the degree rules for every role.</dd>
+            </dl>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">MySQL</span></div>
+          </article>
+
+          <article class="project">
+            <div class="top"><h3>HCI Course Website</h3><span class="year">2022</span></div>
+            <dl>
+              <dt>Problem</dt><dd>An online human-computer interaction course needed a home that practiced what it taught.</dd>
+              <dt>Built</dt><dd>The course website for CSCI 6561 as a research assistant, designed around HCI principles: clear hierarchy, consistency, and accessible navigation.</dd>
+              <!-- TODO: add how it was used (semesters, number of students) -->
+              <dt>Result</dt><dd>The course's online home: schedule, materials and assignments in one consistent place.</dd>
+            </dl>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">UX</span></div>
+          </article>
+
+          <article class="project">
+            <div class="top"><h3>Liftlog</h3><span class="badge">Live</span><span class="year">2023 → 2026</span></div>
+            <dl>
+              <dt>Problem</dt><dd>Workout apps log sets well, but the useful questions are analytical: am I getting stronger, is each muscle getting enough work, and when should I add weight?</dd>
+              <dt>Built</dt><dd>A rebuild of my 2023 team project as a data-driven planner: a split generator with a volume check, set logging with double-progression suggestions, and insights (RIR-adjusted e1RM trends with a regression fit, weekly sets per muscle against the 10–20 research range, volume, PRs).</dd>
+              <dt>Result</dt><dd>Free, no sign-up, nothing leaves the browser, and a tidy CSV export ready for pandas or SQL.</dd>
+            </dl>
+            <div class="tags"><span class="tag">JavaScript</span><span class="tag">SVG charts</span><span class="tag">Regression</span><span class="tag">Data modeling</span></div>
+            <div class="links-row"><a href="https://syoon291.github.io/genki/">Now part of genki →</a><a href="../workout/">Liftlog (2026)</a><a href="../workout/legacy/">2023 version</a></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span data-year>2026</span> Steven Yoon</span>
+      <span>Built by hand, hosted on GitHub Pages. <a href="https://syoon291.github.io/myWebsite/">My first website (2022)</a></span>
+    </div>
+  </footer>
+</body>
+</html>
